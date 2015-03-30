@@ -1,0 +1,13 @@
+.top-bar{
+	background:#21304a;
+}
+
+.top-bar-section li:not(.has-form) a:not(.button){
+	background:#21304a;
+}
+
+.panel{
+	margin-top: 2.22222em;
+	border-width: 2px;
+	padding: 3.25em;
+}
