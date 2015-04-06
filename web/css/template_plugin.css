@@ -1,13 +1,31 @@
 .top-bar{
-	background:#21304a;
+	background:#5b9573;
+	height:96px;
 }
 
 .top-bar-section li:not(.has-form) a:not(.button){
-	background:#21304a;
+	background:#5b9573;
+	padding: 0 24px;
+	line-height: 50px;	
+}
+
+.top-bar-section li:not(.has-form) a:not(.button):hover {
+	background: #3c5d4a;
+	padding: 0 24px;
+	line-height: 50px;	
 }
 
 .panel{
 	margin-top: 2.22222em;
 	border-width: 2px;
 	padding: 3.25em;
+}
+
+.small-block-grid-1{
+	margin-left: 12px;
+}
+
+.medium-block-grid-3 p.text-center{
+	font-size: 0.850rem;
+	line-height:1.3;
 }
