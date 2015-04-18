@@ -1,5 +1,9 @@
 package br.edu.ifba.plugin.PROJETO.visao.impl;
 
+import javax.faces.bean.ManagedBean;
+
+import br.edu.ifba.plugin.PROJETO.controle.ControleAcesso;
+import br.edu.ifba.plugin.PROJETO.modelo.ModeloUsuario;
 import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
 import br.edu.ifba.plugin.PROJETO.visao.IAcessoUsuario;
 
@@ -14,13 +18,14 @@ import br.edu.ifba.plugin.PROJETO.visao.IAcessoUsuario;
  * 
  * @author PLUGIN
  */
+@ManagedBean(name = "acesso")
 public class AcessoUsuario implements IAcessoUsuario {
 
 	private String login, senha;
+	private boolean semPermissao = false;
 
-	public AcessoUsuario(String login, String senha) {
+	public void setLogin(String login) {
 		this.login = login;
-		this.senha = senha;
 	}
 
 	@Override
@@ -28,9 +33,23 @@ public class AcessoUsuario implements IAcessoUsuario {
 		return login;
 	}
 
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
 	@Override
 	public String getSenha() {
 		return senha;
+	}
+
+	public void acessar() {
+		ModeloUsuario modelo = new ModeloUsuario();
+		ControleAcesso controle = new ControleAcesso();
+
+		controle.setModeloUsuario(modelo);
+		controle.setAcessoUsuario(this);
+
+		controle.validarAcesso();
 	}
 
 	@Override
@@ -41,7 +60,12 @@ public class AcessoUsuario implements IAcessoUsuario {
 
 	@Override
 	public void notificarSemPermissao() {
-		System.out.println("Informações inválidas!");
+		semPermissao = true;
+	}
+
+	public boolean getSemPermissao() {
+		return semPermissao;
 	}
 
 }
+
