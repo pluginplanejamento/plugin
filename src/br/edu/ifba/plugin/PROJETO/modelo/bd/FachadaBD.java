@@ -45,7 +45,8 @@ public class FachadaBD {
 		usuarios.put(u2.getId(), u2);
 	}
 	
-	public static List<Usuario> getUsuariosPorLoginSenha(String login,
+	public static List<Usuario> getUsuariosPorLoginSenha(
+			String login,
 			String senha) {
 		List<Usuario> encontrados = new ArrayList<Usuario>();
 		
@@ -59,6 +60,46 @@ public class FachadaBD {
 		return encontrados;
 	}
 	
+	public static List<Usuario> getUsuariosPorCPF(String cpf)
+	{
+		List<Usuario> encontrados = new ArrayList<Usuario>();
+		
+		for (Usuario u : usuarios.values()) {
+			if (u.getCpf().equals(cpf)) {
+				encontrados.add(u);
+			}
+		}
+		
+		return encontrados;
+	}
+
+	public static List<Usuario> getUsuariosPorRG(String rg)
+	{
+		List<Usuario> encontrados = new ArrayList<Usuario>();
+		
+		for (Usuario u : usuarios.values()) {
+			if (u.getRg().equals(rg)) {
+				encontrados.add(u);
+			}
+		}
+		
+		return encontrados;
+	}
+	
+	public static List<Usuario> getUsuariosPorNome(
+			String nome)
+	{
+		List<Usuario> encontrados = new ArrayList<Usuario>();
+		
+		for (Usuario u : usuarios.values()) {
+			if (u.getNome().toLowerCase().
+					contains(nome.toLowerCase())) {
+				encontrados.add(u);
+			}
+		}
+		
+		return encontrados;
+	}
 }
 
 

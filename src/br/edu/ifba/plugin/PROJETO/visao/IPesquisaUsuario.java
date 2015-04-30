@@ -1,0 +1,21 @@
+package br.edu.ifba.plugin.PROJETO.visao;
+
+import java.util.List;
+
+import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
+
+public interface IPesquisaUsuario {
+
+	public String getRg();
+
+	public String getCpf();
+
+	public String getNome();
+
+	// ////////////////////
+
+	public void atualizarUsuariosEncontrados(List<Usuario> usuarios);
+
+	public void notificarUsuariosNaoEncontrados();
+
+}
