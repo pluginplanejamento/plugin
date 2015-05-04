@@ -1,9 +1,8 @@
-package br.edu.ifba.plugin.PROJETO.modelo.beans;
+package br.edu.ifba.plugin.PROJETO.modelo.bd.estatico;
 
 import java.util.Date;
 
 public class Usuario {
-
 	private int id;
 	private String cpf;
 	private String rg;

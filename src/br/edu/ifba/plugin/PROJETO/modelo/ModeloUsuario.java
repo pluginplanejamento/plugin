@@ -3,8 +3,10 @@ package br.edu.ifba.plugin.PROJETO.modelo;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.edu.ifba.plugin.PROJETO.modelo.bd.FachadaBD;
-import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.estatico.Usuario;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.estatico.UsuarioDAO;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.jpa.UsuarioSagu;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.jpa.UsuarioSaguDAO;
 import br.edu.ifba.plugin.PROJETO.visao.IAcessoUsuario;
 import br.edu.ifba.plugin.PROJETO.visao.IPesquisaUsuario;
 
@@ -18,6 +20,8 @@ import br.edu.ifba.plugin.PROJETO.visao.IPesquisaUsuario;
  */
 public class ModeloUsuario {
 
+	private static final boolean UTILIZAR_SAGU = true;
+
 	private IAcessoUsuario acessoUsuario = null;
 	private IPesquisaUsuario pesquisaUsuario = null;
 
@@ -30,13 +34,25 @@ public class ModeloUsuario {
 	}
 
 	public void validarAcesso() {
-		List<Usuario> usuarios = FachadaBD.getUsuariosPorLoginSenha(
-				acessoUsuario.getLogin(), acessoUsuario.getSenha());
-		if (usuarios.isEmpty()) {
-			acessoUsuario.notificarSemPermissao();
+		if (UTILIZAR_SAGU) {
+			List<UsuarioSagu> usuarios = new UsuarioSaguDAO()
+					.getUsuariosPorLoginSenha(acessoUsuario.getLogin(),
+							acessoUsuario.getSenha());
+			if (usuarios.isEmpty()) {
+				acessoUsuario.notificarSemPermissao();
+			} else {
+				UsuarioSagu usuario = usuarios.get(0);
+				acessoUsuario.atualizarUsuarioComPermissao(usuario);
+			}
 		} else {
-			Usuario usuario = usuarios.get(0);
-			acessoUsuario.atualizarUsuarioComPermissao(usuario);
+			List<Usuario> usuarios = UsuarioDAO.getUsuariosPorLoginSenha(
+					acessoUsuario.getLogin(), acessoUsuario.getSenha());
+			if (usuarios.isEmpty()) {
+				acessoUsuario.notificarSemPermissao();
+			} else {
+				Usuario usuario = usuarios.get(0);
+				acessoUsuario.atualizarUsuarioComPermissao(usuario);
+			}
 		}
 
 	}
@@ -46,16 +62,15 @@ public class ModeloUsuario {
 
 		String criterio = pesquisaUsuario.getCpf();
 		if (!criterio.equals("")) {
-			usuarios = FachadaBD.getUsuariosPorCPF(criterio);
+			usuarios = UsuarioDAO.getUsuariosPorCPF(criterio);
 		} else {
 			criterio = pesquisaUsuario.getRg();
 			if (!criterio.equals("")) {
-				usuarios = FachadaBD.getUsuariosPorRG(criterio);
+				usuarios = UsuarioDAO.getUsuariosPorRG(criterio);
 			} else {
 				criterio = pesquisaUsuario.getNome();
 				if (!criterio.equals("")) {
-					usuarios = FachadaBD.
-							getUsuariosPorNome(criterio);
+					usuarios = UsuarioDAO.getUsuariosPorNome(criterio);
 				}
 			}
 		}

@@ -7,7 +7,7 @@ import javax.faces.bean.ManagedBean;
 
 import br.edu.ifba.plugin.PROJETO.controle.ControleUsuario;
 import br.edu.ifba.plugin.PROJETO.modelo.ModeloUsuario;
-import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.estatico.Usuario;
 import br.edu.ifba.plugin.PROJETO.visao.IPesquisaUsuario;
 
 @ManagedBean(name = "pusuario")

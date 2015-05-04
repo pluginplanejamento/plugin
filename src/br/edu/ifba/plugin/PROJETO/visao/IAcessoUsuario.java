@@ -1,6 +1,7 @@
 package br.edu.ifba.plugin.PROJETO.visao;
 
-import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.estatico.Usuario;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.jpa.UsuarioSagu;
 
 /**
  * Define um fluxo de operacoes necessarias para a(s) regra(s) de negocio(s)
@@ -24,6 +25,8 @@ public interface IAcessoUsuario {
 	public String getSenha();
 
 	public void atualizarUsuarioComPermissao(Usuario usuario);
+
+	public void atualizarUsuarioComPermissao(UsuarioSagu usuario);
 
 	public void notificarSemPermissao();
 }

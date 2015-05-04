@@ -4,7 +4,8 @@ import javax.faces.bean.ManagedBean;
 
 import br.edu.ifba.plugin.PROJETO.controle.ControleAcesso;
 import br.edu.ifba.plugin.PROJETO.modelo.ModeloUsuario;
-import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.estatico.Usuario;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.jpa.UsuarioSagu;
 import br.edu.ifba.plugin.PROJETO.visao.IAcessoUsuario;
 
 /**
@@ -54,7 +55,13 @@ public class AcessoUsuario implements IAcessoUsuario {
 
 	@Override
 	public void atualizarUsuarioComPermissao(Usuario usuario) {
-		System.out.println("Usuário com permissão de acesso = "
+		System.out.println("Usuario com permissao de acesso = "
+				+ usuario.getNome());
+	}
+
+	@Override
+	public void atualizarUsuarioComPermissao(UsuarioSagu usuario) {
+		System.out.println("Usuario do sagu com permissao de acesso = "
 				+ usuario.getNome());
 	}
 

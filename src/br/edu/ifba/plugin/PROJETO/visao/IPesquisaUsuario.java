@@ -2,7 +2,7 @@ package br.edu.ifba.plugin.PROJETO.visao;
 
 import java.util.List;
 
-import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
+import br.edu.ifba.plugin.PROJETO.modelo.bd.estatico.Usuario;
 
 public interface IPesquisaUsuario {
 

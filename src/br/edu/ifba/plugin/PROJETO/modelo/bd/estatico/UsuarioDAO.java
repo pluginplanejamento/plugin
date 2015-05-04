@@ -1,11 +1,9 @@
-package br.edu.ifba.plugin.PROJETO.modelo.bd;
+package br.edu.ifba.plugin.PROJETO.modelo.bd.estatico;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-
-import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
 
 /**
  * Mock de acesso a banco de dados. Utiliza colecoes estaticas para
@@ -15,7 +13,7 @@ import br.edu.ifba.plugin.PROJETO.modelo.beans.Usuario;
  * 
  * @author PLUGIN
  */
-public class FachadaBD {
+public class UsuarioDAO {
 
 	private static Map<Integer, Usuario> usuarios = 
 			new TreeMap<Integer, Usuario>();
