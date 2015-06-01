@@ -2,322 +2,330 @@
 <!--[if IE 9]><html class="lt-ie10" lang="pt-br" > <![endif]-->
 <html class="no-js" lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
 
 <head>
-<meta charset="utf-8" />
-<!-- If you delete this meta tag World War Z will become a reality -->
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>PLUGIN</title>
+  <meta charset="utf-8" />
+  <!-- If you delete this meta tag World War Z will become a reality -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PLUGIN</title>
 
-<!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
-<link rel="stylesheet" href="css/normalize.css" />
-<link rel="stylesheet" href="css/foundation.css" />
-<link rel="stylesheet" href="css/template_plugin.css" />
+  <!-- If you are using the CSS version, only link these 2 files, you may add app.css to use for your overrides if you like -->
+  <link rel="stylesheet" href="css/normalize.css" />
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/template_plugin.css" />
+  
+  <!-- If you are using the gem version, you need this only -->
+  <link rel="stylesheet" href="css/app.css" />
 
-<!-- If you are using the gem version, you need this only -->
-<link rel="stylesheet" href="css/app.css" />
-
-<script src="js/vendor/modernizr.js"></script>
+  <script src="js/vendor/modernizr.js"></script>
 
 </head>
 <body>
-	<div class="fixed">
+	<div class="fixed">	
 		<nav class="top-bar docs-bar" data-topbar="topbar">
-			<ul class="title-area">
-				<ul class="small-block-grid-1">
-					<br />
-					<li><a href="index.ifba"><img src="img/logo_plugin2.png"></img></a></li>
+				<ul class="title-area">	
+					<ul class="small-block-grid-1">
+   						<br/>
+ 						<li><a href="index.ifba"><img src="img/logo_plugin2.png"></img></a></li>		
+  					</ul>	
+					<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>	
 				</ul>
-
-				<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
-			</ul>
-			<div class="right conta-usuario">
-				<p>
-					Olá, <strong>Usuário! </strong>[ <a href="">Sair</a> ]
-				</p>
-			</div>
-			<br />
-			<section class="top-bar-section">
-				<ul class="right">
-					<li><a href="#">Início</a></li>
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li class="has-dropdown"><a href="#">Link 4</a>
-						<ul class="dropdown plugin">
-							<li><a href="#">Submenu 1</a></li>
-							<li><a href="#">Submenu 2</a></li>
-							<li><a href="#">Submenu 3</a></li>
-						</ul></li>
-				</ul>
-			</section>
+				<div class="right conta-usuario">
+  					<p>Olá, <strong>Usuário! </strong>[ <a href="">Sair</a> ]</p>
+  				</div>	
+				<br/>
+				<section class="top-bar-section">
+					<ul class="right">
+						<li><a href="#">Início</a></li>
+						<li><a href="#">Link 1</a></li>
+						<li><a href="#">Link 2</a></li>
+						<li><a href="#">Link 3</a></li>
+						<li class="has-dropdown"><a href="#">Link 4</a>
+							<ul class="dropdown plugin">
+								<li><a href="#">Submenu 1</a></li>
+								<li><a href="#">Submenu 2</a></li>
+							</ul>
+						</li>
+					</ul>
+					<div class="nome-projeto">
+					<ul class="left">
+						<li><a>PROJETO</a></li>
+					</ul>
+					</div>	
+				</section>
 		</nav>
 		<section id="github" class="githubissues hide-for-small-down">
-		</section>
-	</div>
-	<br />
-	<br />
-	<br />
+  		</section>
+  	</div>
+  	<br/>
+  	<br/>
+  	<br/>
 	<div class="row">
-		<div class="medium-12 large-12 columns">
-			<div class="medium-3 large-3 columns">
-				<ul class="off-canvas-list doc-oc-list">
-					<li><label>Menu</label></li>
-					<li><a href="#">Link 1</a></li>
-					<li><a href="#">Link 2</a></li>
-					<li><a href="#">Link 3</a></li>
-					<li><a href="#">Link 4</a></li>
-					<li><a href="#">Link 5</a></li>
-				</ul>
-			</div>
-			<div class="medium-9 large-9 columns">
-				<div class="titulo-faixa">
-					<h3>TIPOGRAFIA</h3>
-				</div>
-				<div class="panel-plugin2">
-
-					<h3>Nível 1 Título</h3>
-					<br /> <strong>Subtítulo</strong><br />
-					<br />
-					<p class="text-justify">Lorem ipsum dolor sit amet, consectetur
-						adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-						exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat.</p>
-
-					<h4>Nível 2 Título</h4>
-					<p class="text-left">Lorem ipsum dolor sit amet, consectetur
-						adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore magna aliqua.</p>
-					<br />
-
-					<h5>Nível 3 Título</h5>
-					<p class="text-right">Lorem ipsum dolor sit amet, consectetur
-						adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-						dolore magna aliqua.</p>
-					<br />
-
+			<div class= "medium-12 large-12 columns">	
+					<div class= "medium-3 large-3 columns">			
+  							<ul class="off-canvas-list doc-oc-list">
+   								<li><label>Menu</label></li>
+    							<li><a href="#">Link 1</a></li>
+    							<li><a href="#">Link 2</a></li>
+    							<li><a href="#">Link 3</a></li>
+    							<li><a href="#">Link 4</a></li>
+    							<li><a href="#">Link 5</a></li>
+  							</ul>
+					</div>
+					<div class= "medium-9 large-9 columns">	
+						<div class="titulo-faixa">
+							<h3>TIPOGRAFIA</h3>
+						</div>
+						<div class="panel-plugin-padrao">
+						
+							<h3>Nível 1 Título</h3><br/>
+							<strong>Subtítulo</strong><br/><br/>
+							<p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 
+							veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
+							consequat.</p>
+							
+							<h4>Nível 2 Título</h4>
+							<p class="text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br/>
+							
+							<h5>Nível 3 Título</h5>
+							<p class="text-right">Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
+							sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p><br/>
+									
+							<div class="row">	
+								<div class= "medium-3 large-3 columns">	
+									<ul class="disc">
+  										<li>Lista:</li>
+  										<li>Item</li>
+  										<li>Item</li>
+									</ul>
+								</div>
+									
+								<div class= "medium-9 large-9 columns">	
+									<ol>
+  										<li>Lista:</li>
+  										<li>Item</li>
+  										<li>Item</li>
+									</ol>
+								</div>
+							</div>				
+						</div>
+					</div>	
+					
 					<div class="row">
-						<div class="medium-3 large-3 columns">
-							<ul class="disc">
-								<li>Lista:</li>
-								<li>Item</li>
-								<li>Item</li>
-							</ul>
+						<div class= "medium-3 large-3 columns">
 						</div>
-
-						<div class="medium-9 large-9 columns">
-							<ol>
-								<li>Lista:</li>
-								<li>Item</li>
-								<li>Item</li>
-							</ol>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="medium-3 large-3 columns"></div>
-				<div class="medium-9 medium-right large-9 columns">
-					<div class="titulo-faixa">
-						<h3>ELEMENTOS FORMULÁRIO</h3>
-					</div>
-
-					<div class="panel-plugin2">
-						<form>
-							<div class="row">
-								<div class="medium-12 medium-centered large-12 columns">
-									<label>Input:<font>*</font> <span>(Alguma
-											observação)</span><br /> <input type="text"
-										placeholder="Input padrão" />
-									</label>
-								</div>
+						<div class= "medium-9 medium-right large-9 columns">	
+							<div class="titulo-faixa">
+								<h3>ELEMENTOS FORMULÁRIO</h3>
 							</div>
-
-							<div class="row">
-								<div class="medium-6 large-6 columns">
-									<label>Select box: <select>
-											<option valeu="">Opção 1</option>
-											<option valeu="">Opção 2</option>
-											<option valeu="">Opção 3</option>
-									</select>
-									</label>
+						
+							<div class="panel-plugin-padrao">
+								<h:form>
+									<div class="row">
+										<div class="medium-12 medium-centered large-12 columns">
+										 	<label>Entrada:<font>*</font>  <span>(Alguma observação)</span><br/>
+       										 	<h:inputText name="Entrada" placeholder="Input padrão" value="#{padrao.texto}" />
+       										 </label>
+										</div>
+									</div>
+								
+									<div class="row">
+										<div class="medium-6 large-6 columns">
+											<label>Select box:
+												<h:selectOneListbox id="" value="#">
+  													<f:selectItem itemLabel="Opção 1" itemValue=""/>
+  													<f:selectItem itemLabel="Opção 2" itemValue=""/>
+  													<f:selectItem itemLabel="Opção 3" itemValue=""/>
+												</h:selectOneListbox>
+											</label>
+										</div>
+										
+										<div class="medium-6 large-6 columns">
+										 	<label>Data:
+										 		<h:inputText id="data" type="date" placeholder="Date" value="#" >
+            										<f:convertDateTime id="padraoData" pattern="dd/MM/yyyy" timeZone="America/Sao_Paulo"/>
+      											</h:inputText>	
+      										</label>
+										</div>
+									</div>
+								
+									<div class="row">
+										<div class="medium-6 large-6 columns">
+										 	<label>Botões radio: <br/>
+										 		<h:selectOneRadio id="sexo" value="#">
+  													<f:selectItem itemLabel="Masculino" itemValue="Masculino"/>
+  													<f:selectItem itemLabel="Feminino" itemValue="Feminino"/>
+												</h:selectOneRadio> 
+											</label>	
+										</div>
+										
+										<div class="medium-6 large-6 columns">
+										 	<label>Botões checkbox: <br/>
+										 		<h:selectManyCheckbox id="opções" value="#">
+  													<f:selectItem itemLabel="Opção A" itemValue=""/>
+ 													<f:selectItem itemLabel="Opção B" itemValue=""/>
+												</h:selectManyCheckbox>	
+											</label>
+										</div>
+									</div>
+								
+									<div class="row">
+    									<div class="medium-12 large-12 columns">
+     				 						<label>Área de Texto: 
+     				 							<h:inputTextarea placeholder="Texto" value="" readonly="true"/>
+     				 						</label>
+										</div>
+  									</div>
+    									
+  								
+									<fieldset>
+   										<legend>Legenda Fieldset</legend>
+											<div class="row">
+												<div class="medium-6 large-6 columns">
+										 			<label>Entrada:
+										 				<h:inputText type="text" name="Entrada" placeholder="Input padrão" value="#" alt="#" class="#" />
+										 			</label>
+												</div>
+												<div class="medium-6 large-6 columns">
+										 			<label>Entrada: 
+       										 			<h:inputText type="text" name="Entrada" placeholder="Input padrão" value="#"alt="#" class="#" />
+       										 		</label>
+												</div>
+											</div>
+									</fieldset>
+								
+									<div class="row">
+    									<div class="medium-6 large-6 columns">
+      										<label>Erro
+        										<h:outputLabel type="text" value="Entrada inválida!" small class="error" rendered="#" />
+        									</label>
+    									</div>
+									</div>	
+								</h:form>
+							
+								<div class="row">
+									<div class="medium-3 large-3 columns">
+										<h:commandLink id="pequeno" class="button small success radius" value="Pequeno" action="#" />
+									</div>
+								
+									<div class="medium-3 large-3 columns">
+										<h:commandLink id="simples" class="button success radius" value="Simples" action="#" />
+									</div>
+								
+									<div class="medium-3 large-3 columns">
+										<h:commandLink id="simples" class="button" value="Simples" action="#" />
+									</div>
+								
+									<div class="medium-3 large-3 columns">
+										<h:commandLink id="grande" class="button large success radius" value="Grande" action="#" />
+									</div>
+								
 								</div>
-								<div class="medium-6 large-6 columns">
-									<label>Date: <input type="date" placeholder="Date" />
-									</label>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="medium-6 large-6 columns">
-									<label>Botões radio: <br /> <input type="radio" /><label>Opção
-											A</label> <input type="radio" /><label>Opção B</label>
-									</label>
-								</div>
-								<div class="medium-6 large-6 columns">
-									<label>Botões checkbox: <br /> <input type="checkbox" /><label>Opção
-											A</label> <input type="checkbox" /><label>Opção B</label>
-									</label>
-								</div>
-							</div>
-
-							<div class="row">
-								<div class="medium-12 large-12 columns">
-									<label>Textarea Label: <textarea placeholder="Texto"></textarea>
-									</label>
-								</div>
-							</div>
-
-							<fieldset>
-								<legend>Legenda Fieldset</legend>
+							
 								<div class="row">
 									<div class="medium-6 large-6 columns">
-										<label>Input: <input type="text"
-											placeholder="Input padrão" />
-										</label>
+										<h:commandLink id="expandido" class="button expand right" value="Expandido" action="#" />
 									</div>
-									<div class="medium-6 large-6 columns">
-										<label>Input: <input type="text"
-											placeholder="Input padrão" />
-										</label>
+								
+									<div class="medium-3 large-3 columns">
+										<h:commandLink id="alerta" class="button alert left" value="Alerta" action="#" />
+									</div>
+								
+									<div class="medium-3 large-3 columns">
+										<h:commandLink id="arredondado" class="button round success right" value="Arredondado" action="#" />
+									</div>
+								
+								</div>
+							
+							</div>
+						
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class= "medium-3 large-3 columns">
+						</div>
+						<div class= "medium-9 large-9 columns">	
+							<div class="titulo-faixa">
+								<h3>TABELA</h3>
+							</div>
+							<div class="panel-plugin-padrao">
+								<div class="row">
+									<div class="medium-12 large-12 columns">
+										<table>
+  											<thead>
+   												<tr>
+      												<th width="100">Table Header</th>
+      												<th>Table Header</th>
+      												<th width="80">Table Header</th>
+      												<th width="80">Table Header</th>
+    											</tr>
+  											</thead>
+  											<tbody>
+    											<tr>
+      												<td>Lorem ipsum dolor</td>
+      												<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+      												<td>Lorem ipsum dolor</td>
+      												<td>Lorem ipsum dolor</td>
+    											</tr>
+   	 											<tr>
+      												<td>Lorem ipsum dolor</td>
+      												<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</td>
+      												<td>Lorem ipsum dolor</td>
+      												<td>Lorem ipsum dolor</td>
+    											</tr>
+    											<tr>
+      												<td>Lorem ipsum dolor</td>
+      												<td>Lorem ipsum dolor sit amet, consectetur adipiscing elit</td>
+      												<td>Lorem ipsum dolor</td>
+      												<td>Lorem ipsum dolor</td>
+    											</tr>
+  											</tbody>
+										</table>
 									</div>
 								</div>
-							</fieldset>
-
-							<div class="row">
-								<div class="medium-6 large-6 columns">
-									<label class="error">Erro <input type="text"
-										class="error" />
-									</label> <small class="error">Entrada inválida</small>
+								<div class="row">
+									<div class="medium-12 large-12 columns">
+										<ul class="inline-list">
+  											<li><a href="#">Link 1</a></li>
+  											<li><a href="#">Link 2</a></li>
+  											<li><a href="#">Link 3</a></li>
+  											<li><a href="#">Link 4</a></li>
+  											<li><a href="#">Link 5</a></li>
+										</ul>
+									</div>
 								</div>
 							</div>
-						</form>
-
-						<div class="row">
-							<div class="medium-3 large-3 columns">
-								<a href="#" class="button small success radius">Small</a>
-							</div>
-
-							<div class="medium-3 large-3 columns">
-								<a href="#" class="button success radius">Simplo</a>
-							</div>
-
-							<div class="medium-3 large-3 columns">
-								<a href="#" class="button">Simplo</a>
-							</div>
-
-							<div class="medium-3 large-3 columns">
-								<a href="#" class="button large success radius">Large</a>
-							</div>
-
-						</div>
-
-						<div class="row">
-							<div class="medium-6 large-6 columns">
-								<a href="#" class="button expand right">Expand</a>
-							</div>
-
-							<div class="medium-3 large-3 columns">
-								<a href="#" class="button alert left">Alert</a>
-							</div>
-
-							<div class="medium-3 large-3 columns">
-								<a href="#" class="button round success right">Round</a>
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="medium-3 large-3 columns"></div>
-				<div class="medium-9 large-9 columns">
-					<div class="titulo-faixa">
-						<h3>TABELA</h3>
-					</div>
-					<div class="panel-plugin2">
-						<div class="row">
-							<div class="medium-12 large-12 columns">
-								<table>
-									<thead>
-										<tr>
-											<th width="100">Table Header</th>
-											<th>Table Header</th>
-											<th width="80">Table Header</th>
-											<th width="80">Table Header</th>
-										</tr>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Lorem ipsum dolor</td>
-											<td>Lorem ipsum dolor sit amet, consectetur adipiscing
-												elit.</td>
-											<td>Lorem ipsum dolor</td>
-											<td>Lorem ipsum dolor</td>
-										</tr>
-										<tr>
-											<td>Lorem ipsum dolor</td>
-											<td>Lorem ipsum dolor sit amet, consectetur adipiscing
-												elit.</td>
-											<td>Lorem ipsum dolor</td>
-											<td>Lorem ipsum dolor</td>
-										</tr>
-										<tr>
-											<td>Lorem ipsum dolor</td>
-											<td>Lorem ipsum dolor sit amet, consectetur adipiscing
-												elit</td>
-											<td>Lorem ipsum dolor</td>
-											<td>Lorem ipsum dolor</td>
-										</tr>
-									</tbody>
-								</table>
-							</div>
-						</div>
-						<div class="row">
-							<div class="medium-12 large-12 columns">
-								<ul class="inline-list">
-									<li><a href="#">Link 1</a></li>
-									<li><a href="#">Link 2</a></li>
-									<li><a href="#">Link 3</a></li>
-									<li><a href="#">Link 4</a></li>
-									<li><a href="#">Link 5</a></li>
-								</ul>
-							</div>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
+			</div>	
 	</div>
 	<footer>
 		<div class="row">
 			<div class="medium-12 large-12 columns">
-				<div class="medium-2 large-2 columns">
-					<img src="img/ifba_branco.png"></img>
-				</div>
-				<div class="medium-10 large-10 columns">
-					<p class="texto-footer">Projeto desenvolvido pelo Curso de
-						Bacharelado em Sistemas de Informação.</p>
-				</div>
+					<div class="medium-3 large-3 columns">
+						<img src="img/logo_ifba2.png"></img>
+					</div>
+					<div class="medium-8 large-8 columns medium-centered">
+						<p class="texto-footer">Projeto desenvolvido pelo Curso de Bacharelado em Sistemas de Informação.</p>
+					</div>
 			</div>
 		</div>
 	</footer>
+	
+			
+	
 
 
-
-
-
-	<script src="js/vendor/jquery.js"></script>
-	<script src="js/foundation.min.js"></script>
-	<script src="js/foundation/foundation.topbar.js"></script>
-	<script>
-		$(document).foundation();
-	</script>
+  <script src="js/vendor/jquery.js"></script>
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation/foundation.topbar.js"></script>
+  <script>
+    $(document).foundation();
+  </script>
 </body>
 </html>
