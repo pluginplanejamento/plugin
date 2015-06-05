@@ -2,9 +2,7 @@
 <!--[if IE 9]><html class="lt-ie10" lang="pt-br" > <![endif]-->
 <html class="no-js" lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:h="http://java.sun.com/jsf/html">
-
 <head>
 <meta charset="utf-8" />
 <!-- If you delete this meta tag World War Z will become a reality -->
@@ -68,7 +66,8 @@
 							<div class="medium-10 medium-centered large-10 columns">
 								<h:commandLink id="acesso" class="success button expand" value="Acessar"
 									action="#{acesso.acessar()}" />
-								<h:outputLabel value="Informações inválidas. Tente novamente!" class="error" rendered="#{acesso.semPermissao}" />
+								<h:outputLabel value="Informações inválidas. Tente novamente!" class="error"
+									rendered="#{acesso.semPermissao}" />
 							</div>
 						</div>
 					</div>

@@ -20,6 +20,22 @@
   margin-top: 0px;  
 }
 
+.top-bar-section .nome-projeto li:not(.has-form) a:not(.button) {
+	background:#5b9573;
+	padding: 0 24px;
+	line-height: 36px;	
+}
+
+.top-bar-section .nome-projeto li:not(.has-form) a:not(.button): hover {
+	padding: 0 24px;
+	line-height: 36px;
+}
+
+.top-bar-section .nome-projeto ul li > a {
+  font-size: 1.200rem;
+  margin-top: 0px;  
+}
+
 .panel-plugin{
 	margin-top: 2.22222em;
 	border-width: 2px;
@@ -108,7 +124,7 @@ ul.off-canvas-list li a:hover{
 	background-color: #333333;		
 }
 
-.panel-plugin2{
+.panel-plugin-padrao{
 	margin-top: 0.0008em;
 	border-width: 1px;
 	padding: 2.25em;
@@ -118,7 +134,7 @@ ul.off-canvas-list li a:hover{
   	background: #f2f2f2;
 }
 
-.panel-plugin2 p{
+.panel-plugin-padrao p{
 	font-size: 0.900rem
 	
 }
@@ -172,5 +188,6 @@ footer img{
 }
 footer p{
 	margin-top: 55px;
+	font-size: 0.970rem;
 }
 
