@@ -6,6 +6,8 @@ import br.edu.ifba.plugin.PROJETO.modelo.bd.estatico.Usuario;
 
 public interface IPesquisaUsuario {
 
+	public String getId();
+	
 	public String getRg();
 
 	public String getCpf();

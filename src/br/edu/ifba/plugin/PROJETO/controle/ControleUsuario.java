@@ -18,7 +18,22 @@ public class ControleUsuario {
 
 	public void pesquisar() {
 		modeloUsuario.setPesquisaUsuario(pesquisaUsuario);
-		modeloUsuario.pesquisarUsuario();
+		modeloUsuario.pesquisar();
+	}
+	
+	public void remover() {
+		modeloUsuario.setPesquisaUsuario(pesquisaUsuario);
+		modeloUsuario.remover();
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

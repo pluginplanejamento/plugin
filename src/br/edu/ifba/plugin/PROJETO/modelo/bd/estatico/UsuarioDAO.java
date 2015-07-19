@@ -98,6 +98,10 @@ public class UsuarioDAO {
 		
 		return encontrados;
 	}
+	
+	public static void remover(int id) {
+		usuarios.remove(id);
+	}
 }
 
 

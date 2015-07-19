@@ -57,7 +57,7 @@ public class ModeloUsuario {
 
 	}
 
-	public void pesquisarUsuario() {
+	public void pesquisar() {
 		List<Usuario> usuarios = new ArrayList<Usuario>();
 
 		String criterio = pesquisaUsuario.getCpf();
@@ -75,11 +75,17 @@ public class ModeloUsuario {
 			}
 		}
 
+		pesquisaUsuario.atualizarUsuariosEncontrados(usuarios);
+
 		if (usuarios.isEmpty()) {
 			pesquisaUsuario.notificarUsuariosNaoEncontrados();
-		} else {
-			pesquisaUsuario.atualizarUsuariosEncontrados(usuarios);
 		}
+	}
+
+	public void remover() {
+		UsuarioDAO.remover(Integer.parseInt(pesquisaUsuario.getId()));
+
+		pesquisar();
 	}
 
 }
