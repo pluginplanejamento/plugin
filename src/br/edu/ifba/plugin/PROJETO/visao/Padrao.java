@@ -10,7 +10,8 @@ public class Padrao {
 	private String texto = "texto";
 	private int selecao = 0;
 	private Date data = new Date();
-
+	private Date horario = new Date();
+	
 	public void setTexto(String texto) {
 		this.texto = texto;
 	}
@@ -27,6 +28,15 @@ public class Padrao {
 		this.data = data;
 	}
 
+
+	public Date getHorario() {
+		return horario;
+	}
+
+	public void setHorario(Date horario) {
+		this.horario = horario;
+	}
+	
 	public void acao() {
 		System.out.println(texto);
 	}
