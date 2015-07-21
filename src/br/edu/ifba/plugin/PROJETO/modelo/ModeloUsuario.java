@@ -8,6 +8,7 @@ import br.edu.ifba.plugin.PROJETO.modelo.bd.estatico.UsuarioDAO;
 import br.edu.ifba.plugin.PROJETO.modelo.bd.jpa.UsuarioSagu;
 import br.edu.ifba.plugin.PROJETO.modelo.bd.jpa.UsuarioSaguDAO;
 import br.edu.ifba.plugin.PROJETO.visao.IAcessoUsuario;
+import br.edu.ifba.plugin.PROJETO.visao.ICadastroUsuario;
 import br.edu.ifba.plugin.PROJETO.visao.IPesquisaUsuario;
 
 /**
@@ -24,6 +25,7 @@ public class ModeloUsuario {
 
 	private IAcessoUsuario acessoUsuario = null;
 	private IPesquisaUsuario pesquisaUsuario = null;
+	private ICadastroUsuario cadastroUsuario = null;
 
 	public void setAcessoUsuario(IAcessoUsuario acesso) {
 		this.acessoUsuario = acesso;
@@ -31,6 +33,10 @@ public class ModeloUsuario {
 
 	public void setPesquisaUsuario(IPesquisaUsuario pesquisa) {
 		this.pesquisaUsuario = pesquisa;
+	}
+
+	public void setCadastroUsuario(ICadastroUsuario cadastro) {
+		this.cadastroUsuario = cadastro;
 	}
 
 	public void validarAcesso() {
@@ -79,6 +85,16 @@ public class ModeloUsuario {
 
 		if (usuarios.isEmpty()) {
 			pesquisaUsuario.notificarUsuariosNaoEncontrados();
+		}
+	}
+
+	public void pesquisarParaCadastro() {
+		Usuario usuario = UsuarioDAO.getUsuario(cadastroUsuario.getId());
+
+		if (usuario != null) {
+			cadastroUsuario.atualizarUsuarioEncontrado(usuario);
+		} else {
+			cadastroUsuario.notificarUsuarioNaoEncontrado();
 		}
 	}
 

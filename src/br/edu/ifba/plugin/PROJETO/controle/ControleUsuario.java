@@ -1,15 +1,21 @@
 package br.edu.ifba.plugin.PROJETO.controle;
 
 import br.edu.ifba.plugin.PROJETO.modelo.ModeloUsuario;
+import br.edu.ifba.plugin.PROJETO.visao.ICadastroUsuario;
 import br.edu.ifba.plugin.PROJETO.visao.IPesquisaUsuario;
 
 public class ControleUsuario {
 
 	private IPesquisaUsuario pesquisaUsuario;
+	private ICadastroUsuario cadastroUsuario;
 	private ModeloUsuario modeloUsuario;
 
 	public void setPesquisaUsuario(IPesquisaUsuario pesquisa) {
 		this.pesquisaUsuario = pesquisa;
+	}
+
+	public void setCadastroUsuario(ICadastroUsuario cadastro) {
+		this.cadastroUsuario = cadastro;
 	}
 
 	public void setModeloUsuario(ModeloUsuario modelo) {
@@ -19,6 +25,11 @@ public class ControleUsuario {
 	public void pesquisar() {
 		modeloUsuario.setPesquisaUsuario(pesquisaUsuario);
 		modeloUsuario.pesquisar();
+	}
+	
+	public void pesquisarParaCadastro(int id) {
+		modeloUsuario.setCadastroUsuario(cadastroUsuario);
+		modeloUsuario.pesquisarParaCadastro();
 	}
 	
 	public void remover() {
