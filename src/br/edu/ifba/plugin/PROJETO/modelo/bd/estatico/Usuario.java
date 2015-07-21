@@ -121,4 +121,9 @@ public class Usuario {
 		this.endereco = endereco;
 	}
 
+	@Override
+	public String toString() {
+		return "ID = " + id + ". NOME = " + nome;
+	}
+
 }

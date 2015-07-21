@@ -14,7 +14,7 @@ public interface IPesquisaUsuario {
 
 	public String getNome();
 
-	// ////////////////////
+	///////////////////////
 
 	public void atualizarUsuariosEncontrados(List<Usuario> usuarios);
 
