@@ -1,5 +1,6 @@
 package br.edu.ifba.plugin.PROJETO.visao.impl;
 
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.ExternalContext;
@@ -14,6 +15,8 @@ import br.edu.ifba.plugin.PROJETO.visao.ICadastroUsuario;
 @ViewScoped
 public class CadastroUsuario implements ICadastroUsuario {
 
+	private static final String ERRO_CPF_NAO_PREENCHIDO = "CPF deve ser preenchido";
+
 	private String id = "";
 	private Usuario usuario = new Usuario();
 
@@ -23,7 +26,9 @@ public class CadastroUsuario implements ICadastroUsuario {
 		id = (String) context.getSessionMap().get("idUsuario");
 		System.out.println("ID do usuário = " + id);
 
-		recuperarUsuario();
+		if ((id != null) && (!id.isEmpty())) {
+			recuperarUsuario();
+		}
 	}
 
 	private void recuperarUsuario() {
@@ -39,20 +44,27 @@ public class CadastroUsuario implements ICadastroUsuario {
 	@Override
 	public int getId() {
 		int iid = -1;
-		
+
 		if (!id.isEmpty()) {
 			iid = Integer.parseInt(id);
 		}
-		
+
 		return iid;
 	}
-	
+
 	@Override
 	public Usuario getUsuario() {
 		return usuario;
 	}
 
 	public void gravar() {
+		if ((usuario.getCpf() == null) || (usuario.getCpf().isEmpty())) {
+			FacesContext.getCurrentInstance().addMessage(
+					"form:cpf",
+					new FacesMessage(ERRO_CPF_NAO_PREENCHIDO,
+							ERRO_CPF_NAO_PREENCHIDO));
+		}
+
 		System.out.println("Gravando = " + usuario);
 	}
 
