@@ -196,3 +196,7 @@ footer p{
 .ui-datepicker-header{
 	background-color: #f5f5f5;
 }
+
+object, embed {
+  height: 0;
+}
