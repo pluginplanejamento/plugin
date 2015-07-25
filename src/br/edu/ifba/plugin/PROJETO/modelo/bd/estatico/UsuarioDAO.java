@@ -107,6 +107,21 @@ public class UsuarioDAO {
 		usuarios.remove(id);
 	}
 	
+	public static int gravar(Usuario usuario) {
+		if (usuario.getId() != -1) {
+			remover(usuario.getId());
+			usuarios.put(usuario.getId(), usuario);
+		} else {
+			int ultimoId = 0;
+			for (int id : usuarios.keySet()) {
+				ultimoId = id;
+			}
+			usuario.setId(ultimoId + 1);
+			usuarios.put(ultimoId + 1, usuario);
+		}
+		
+		return 0;
+	}
 }
 
 

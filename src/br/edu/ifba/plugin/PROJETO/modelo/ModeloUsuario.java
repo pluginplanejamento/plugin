@@ -91,10 +91,10 @@ public class ModeloUsuario {
 	public void pesquisarParaCadastro() {
 		Usuario usuario = UsuarioDAO.getUsuario(cadastroUsuario.getId());
 
-		if (usuario != null) {
-			cadastroUsuario.atualizarUsuarioEncontrado(usuario);
-		} else {
+		if (usuario == null) {
 			cadastroUsuario.notificarUsuarioNaoEncontrado();
+		} else {
+			cadastroUsuario.atualizarUsuarioEncontrado(usuario);
 		}
 	}
 
@@ -102,6 +102,27 @@ public class ModeloUsuario {
 		UsuarioDAO.remover(Integer.parseInt(pesquisaUsuario.getId()));
 
 		pesquisar();
+	}
+
+	public void adicionar() {
+		Usuario usuario = cadastroUsuario.getUsuario();
+
+		usuario.setId(-1);
+		if (UsuarioDAO.gravar(usuario) > 0) {
+			cadastroUsuario.notificarErroGravacao();
+		} else {
+			cadastroUsuario.notificarUsuarioGravado(usuario);
+		}
+	}
+
+	public void atualizar() {
+		Usuario usuario = cadastroUsuario.getUsuario();
+
+		if (UsuarioDAO.gravar(usuario) > 0) {
+			cadastroUsuario.notificarErroGravacao();
+		} else {
+			cadastroUsuario.notificarUsuarioGravado(usuario);
+		}
 	}
 
 }

@@ -26,25 +26,25 @@ public class ControleUsuario {
 		modeloUsuario.setPesquisaUsuario(pesquisaUsuario);
 		modeloUsuario.pesquisar();
 	}
-	
-	public void pesquisarParaCadastro(int id) {
+
+	public void pesquisarParaCadastro() {
 		modeloUsuario.setCadastroUsuario(cadastroUsuario);
 		modeloUsuario.pesquisarParaCadastro();
 	}
-	
+
 	public void remover() {
 		modeloUsuario.setPesquisaUsuario(pesquisaUsuario);
 		modeloUsuario.remover();
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void gravar() {
+		modeloUsuario.setCadastroUsuario(cadastroUsuario);
+		
+		if (cadastroUsuario.getId() == -1) {
+			modeloUsuario.adicionar();
+		} else {
+			modeloUsuario.atualizar();
+		}
+	}
+
 }

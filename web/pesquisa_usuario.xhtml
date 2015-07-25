@@ -90,7 +90,9 @@
 															<td>
 																<h:commandLink value="Ver detalhes"
 																	actionListener="#{pusuario.ver(u.id)}" /> | 
-																<h:commandLink value="Remover"
+																<h:commandLink
+																	onclick="if (!confirm('Deseja excluir este registro?')) return false"
+																	value="Remover"
 																	actionListener="#{pusuario.remover(u.id)}" />
 															</td>
 														</tr>

@@ -60,6 +60,8 @@ public class PesquisaUsuario implements IPesquisaUsuario {
 	}
 
 	public void pesquisar() {
+		naoEncontrado = false;
+		
 		System.out.println("pesquisar");
 
 		ModeloUsuario modelo = new ModeloUsuario();
@@ -81,7 +83,8 @@ public class PesquisaUsuario implements IPesquisaUsuario {
 	}
 
 	private void exibirCadastro(String id) {
-		ExternalContext context = FacesContext.getCurrentInstance()
+		ExternalContext context = FacesContext.
+				getCurrentInstance()
 				.getExternalContext();
 		context.getSessionMap().put("idUsuario", id);
 		try {

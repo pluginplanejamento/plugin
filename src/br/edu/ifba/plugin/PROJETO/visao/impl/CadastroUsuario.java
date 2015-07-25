@@ -15,16 +15,17 @@ import br.edu.ifba.plugin.PROJETO.visao.ICadastroUsuario;
 @ViewScoped
 public class CadastroUsuario implements ICadastroUsuario {
 
-	private static final String ERRO_CPF_NAO_PREENCHIDO = "CPF deve ser preenchido";
+	private static final String ERRO_CPF_NAO_INFORMADO = "Cpf deve ser informado!";
 
+	public boolean gravado = false;
+	
 	private String id = "";
 	private Usuario usuario = new Usuario();
 
 	public CadastroUsuario() {
-		ExternalContext context = FacesContext.getCurrentInstance()
+		ExternalContext contexto = FacesContext.getCurrentInstance()
 				.getExternalContext();
-		id = (String) context.getSessionMap().get("idUsuario");
-		System.out.println("ID do usuário = " + id);
+		id = (String) contexto.getSessionMap().get("idUsuario");
 
 		if ((id != null) && (!id.isEmpty())) {
 			recuperarUsuario();
@@ -35,17 +36,17 @@ public class CadastroUsuario implements ICadastroUsuario {
 		ModeloUsuario modelo = new ModeloUsuario();
 		ControleUsuario controle = new ControleUsuario();
 
-		controle.setModeloUsuario(modelo);
 		controle.setCadastroUsuario(this);
+		controle.setModeloUsuario(modelo);
 
-		controle.pesquisarParaCadastro(Integer.parseInt(id));
+		controle.pesquisarParaCadastro();
 	}
 
 	@Override
 	public int getId() {
-		int iid = -1;
+		int iid = 0;
 
-		if (!id.isEmpty()) {
+		if ((id != null) && (!id.isEmpty())) {
 			iid = Integer.parseInt(id);
 		}
 
@@ -57,38 +58,66 @@ public class CadastroUsuario implements ICadastroUsuario {
 		return usuario;
 	}
 
-	public void gravar() {
-		if ((usuario.getCpf() == null) || (usuario.getCpf().isEmpty())) {
-			FacesContext.getCurrentInstance().addMessage(
-					"form:cpf",
-					new FacesMessage(ERRO_CPF_NAO_PREENCHIDO,
-							ERRO_CPF_NAO_PREENCHIDO));
-		}
-
-		System.out.println("Gravando = " + usuario);
-	}
-
 	@Override
 	public void atualizarUsuarioEncontrado(Usuario usuario) {
 		this.usuario = usuario;
 	}
 
+	public void gravar() {
+		gravado = false;
+	
+		if ((usuario.getCpf() == null) || (usuario.getCpf().isEmpty())) {
+			FacesContext.getCurrentInstance().addMessage(
+					"form:cpf",
+					new FacesMessage(ERRO_CPF_NAO_INFORMADO,
+							ERRO_CPF_NAO_INFORMADO));
+		} else {
+			gravarUsuario();
+		}
+	}
+
+	private void gravarUsuario() {
+		ModeloUsuario modelo = new ModeloUsuario();
+		ControleUsuario controle = new ControleUsuario();
+
+		controle.setCadastroUsuario(this);
+		controle.setModeloUsuario(modelo);
+
+		controle.gravar();
+	}
+
 	@Override
 	public void notificarUsuarioNaoEncontrado() {
-		System.out
-				.println("Usuário não encontrado. Talvez ele tenha sido removido!");
+		// TODO Auto-generated method stub
+
 	}
 
 	@Override
 	public void notificarUsuarioGravado(Usuario usuario) {
-		this.usuario = usuario;
-
-		System.out.println("Usuario adicionado com sucesso!");
+		gravado = true;
+	}
+	
+	public boolean getGravado() {
+		return gravado;
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	@Override
 	public void notificarErroGravacao() {
-		System.out.println("Erro de gravação de dados de usuário!");
+		// TODO Auto-generated method stub
+
 	}
 
 }
