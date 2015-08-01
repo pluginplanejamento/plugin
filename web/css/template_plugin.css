@@ -200,3 +200,39 @@ footer p{
 object, embed {
   height: 0;
 }
+
+span.error{
+	display: block;
+    padding: 1.375rem 2.5625rem 1.5625rem;
+    margin-top: 12px;
+    margin-bottom: -1rem;
+    font-size: 0.98rem;
+    font-weight: normal;
+    font-style: normal;
+    background: #f04124;
+    color: white;
+}
+
+span.success{
+	display: block;
+    padding: 1.375rem 2.5625rem 1.5625rem;
+    margin-top: 12px;
+    margin-bottom: -1rem;
+    font-size: 0.98rem;
+    font-weight: normal;
+    font-style: normal;
+    background: #008cba;
+    color: white;
+}
+
+span.warning{
+	display: block;
+    padding: 1.375rem 2.5625rem 1.5625rem;
+    margin-top: 12px;
+    margin-bottom: -1rem;
+    font-size: 0.98rem;
+    font-weight: normal;
+    font-style: normal;
+    background: #e8dc00;
+    color: white;
+}
