@@ -18,7 +18,7 @@ public class CadastroUsuario implements ICadastroUsuario {
 	private static final String ERRO_CPF_NAO_INFORMADO = "Cpf deve ser informado!";
 
 	public boolean gravado = false;
-	
+
 	private String id = "";
 	private Usuario usuario = new Usuario();
 
@@ -65,7 +65,7 @@ public class CadastroUsuario implements ICadastroUsuario {
 
 	public void gravar() {
 		gravado = false;
-	
+
 		if ((usuario.getCpf() == null) || (usuario.getCpf().isEmpty())) {
 			FacesContext.getCurrentInstance().addMessage(
 					"form:cpf",
@@ -89,31 +89,17 @@ public class CadastroUsuario implements ICadastroUsuario {
 	@Override
 	public void notificarUsuarioNaoEncontrado() {
 		// TODO Auto-generated method stub
-
 	}
 
 	@Override
 	public void notificarUsuarioGravado(Usuario usuario) {
 		gravado = true;
 	}
-	
+
 	public boolean getGravado() {
 		return gravado;
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	@Override
 	public void notificarErroGravacao() {
 		// TODO Auto-generated method stub

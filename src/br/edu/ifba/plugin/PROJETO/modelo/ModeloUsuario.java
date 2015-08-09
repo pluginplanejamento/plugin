@@ -102,6 +102,8 @@ public class ModeloUsuario {
 		UsuarioDAO.remover(Integer.parseInt(pesquisaUsuario.getId()));
 
 		pesquisar();
+		
+		pesquisaUsuario.notificarUsuarioRemovido();
 	}
 
 	public void adicionar() {

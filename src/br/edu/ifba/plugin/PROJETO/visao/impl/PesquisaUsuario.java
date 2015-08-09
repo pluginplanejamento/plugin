@@ -18,8 +18,9 @@ import br.edu.ifba.plugin.PROJETO.visao.IPesquisaUsuario;
 @ViewScoped
 public class PesquisaUsuario implements IPesquisaUsuario {
 
-	private boolean naoEncontrado = false;
-
+	private String erro;
+	private String sucesso;
+	
 	private String id = "";
 	private String rg = "";
 	private String cpf = "";
@@ -60,7 +61,7 @@ public class PesquisaUsuario implements IPesquisaUsuario {
 	}
 
 	public void pesquisar() {
-		naoEncontrado = false;
+		erro = null;
 		
 		System.out.println("pesquisar");
 
@@ -103,6 +104,9 @@ public class PesquisaUsuario implements IPesquisaUsuario {
 	}
 
 	public void remover(String id) {
+		sucesso = null;
+		erro = null;
+		
 		this.id = id;
 
 		ModeloUsuario modelo = new ModeloUsuario();
@@ -114,13 +118,27 @@ public class PesquisaUsuario implements IPesquisaUsuario {
 		controle.remover();
 	}
 
-	public boolean getNaoEncontrado() {
-		return naoEncontrado;
+	public String getErro() {
+		return erro;
+	}
+
+	public String getSucesso() {
+		return sucesso;
+	}
+	
+	@Override
+	public void notificarUsuariosNaoEncontrados() {
+		erro = "Nenhum usuário foi encontrado";
 	}
 
 	@Override
-	public void notificarUsuariosNaoEncontrados() {
-		naoEncontrado = true;
+	public void notificarUsuarioRemovido() {
+		sucesso = "Usuário removido com sucesso";
+	}
+
+	@Override
+	public void notificarErroRemocao() {
+		erro = "Não foi possível remover o usuário";
 	}
 
 }

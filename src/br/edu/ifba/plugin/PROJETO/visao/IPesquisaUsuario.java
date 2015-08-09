@@ -19,5 +19,9 @@ public interface IPesquisaUsuario {
 	public void atualizarUsuariosEncontrados(List<Usuario> usuarios);
 
 	public void notificarUsuariosNaoEncontrados();
+	
+	public void notificarUsuarioRemovido();
+	
+	public void notificarErroRemocao();
 
 }

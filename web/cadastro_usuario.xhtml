@@ -106,9 +106,10 @@
 						</div>
 						<div class="row">
 							<div class="medium-12 large-12 columns">
-								<h:outputLabel value="Usuário gravado com sucesso!" 
-									class="alert-box"
+								<h:outputText value="Usuário gravado com sucesso!" 
+									class="success"
 									rendered="#{cadusuario.gravado}" />
+								<br /><br />
 								<h:commandLink class="button large success radius right"
 									value="Gravar" actionListener="#{cadusuario.gravar()}" />
 							</div>
